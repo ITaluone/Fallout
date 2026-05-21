@@ -18,9 +18,11 @@
 [![GitHub Sponsors](https://img.shields.io/github/sponsors/ChrisonSimtian?label=sponsor&logo=githubsponsors&color=EA4AAA)](https://github.com/sponsors/ChrisonSimtian)
 
 > [!IMPORTANT]
-> **Rebrand in progress.** This repository is in the middle of being renamed from **NUKE** to **Fallout** as part of a hard fork. URLs, package names, and namespaces are migrating in stages — see the [Fallout rebrand milestone](https://github.com/ChrisonSimtian/nuke/milestone/1) for status. The legacy `Nuke.*` namespaces are still in use; the `Fallout.*` rename is tracked in issue [#32](https://github.com/ChrisonSimtian/nuke/issues/32).
+> **Rebrand in progress + v11/v12 roadmap published.** This repository is being renamed from **NUKE** to **Fallout** as part of a hard fork. URLs, package names, and namespaces are migrating in stages.
 >
-> Packages currently publish to **GitHub Packages** under this fork's feed. nuget.org publication is gated on the rename completing.
+> **What's next:** v11 finishes the rebrand and lays the internal foundation for a plugin architecture; v12 ships the public `Fallout.Plugin.Sdk`. The full plan is in [**docs/roadmap.md**](docs/roadmap.md). Five RFCs are open now to shape the SDK — your input matters most before v12 firms up.
+>
+> Track v11 in [milestone #6](https://github.com/ChrisonSimtian/Fallout/milestone/6) and v12 in [milestone #7](https://github.com/ChrisonSimtian/Fallout/milestone/7).
 
 ## Based on NUKE
 

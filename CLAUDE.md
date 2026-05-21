@@ -10,6 +10,8 @@ Originally NUKE by [matkoch](https://github.com/matkoch); under new maintenance 
 
 **Rebrand status:** rename is in progress. License headers, docs, repo layout, and assets already say "Fallout"; namespaces (`Nuke.*`), package IDs (`Nuke.Common`), project filenames (`src/Nuke.*`), and the global tool name (`dotnet nuke`) still carry the old name and migrate in later phases. Track the [Fallout rebrand milestone](https://github.com/ChrisonSimtian/Fallout/milestone/1) for status; see [docs/rebrand-plan.md](docs/rebrand-plan.md) for the locked namespace mapping and the consumer bridge strategy.
 
+**Active major: v11 (milestone [#6](https://github.com/ChrisonSimtian/Fallout/milestone/6)) = rebrand completion + plugin-architecture foundation.** Two workstreams: finish the rebrand (the 9 issues moved over from the rebrand milestone), and lay internal groundwork for a plugin model (extract `Fallout.Core` domain, introduce DI, split the `FalloutBuild` god class, internal `IBuildMiddleware` pipeline, fitness tests, coverage uplift). **No public plugin SDK in v11** — that's v12 (milestone [#7](https://github.com/ChrisonSimtian/Fallout/milestone/7)). The internal middleware/listener interfaces stay `internal` in v11; do not expose them via `InternalsVisibleTo` to non-test assemblies. See [docs/roadmap.md](docs/roadmap.md) for the full picture and the five open RFCs ([#97](https://github.com/ChrisonSimtian/Fallout/issues/97)–[#101](https://github.com/ChrisonSimtian/Fallout/issues/101)) driving v12 design.
+
 ## Stack
 
 - .NET SDK pinned in `global.json` (currently `10.0.100`, `rollForward: latestMinor`).
