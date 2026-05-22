@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <IsPackable>true</IsPackable>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <DevelopmentDependency>true</DevelopmentDependency>
+    <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+    <!-- RS1038: combined analyzer+codefix in one assembly. Acceptable here —
+         this is a one-shot migration tool, not a hot-path compile-time analyzer.
+         Split into two assemblies later if CI-only `dotnet build` scenarios
+         actually break.
+         RS2008: analyzer release tracking. Overkill for a single-diagnostic
+         migration package. -->
+    <NoWarn>$(NoWarn);NU5128;CS0649;RS1038;RS2008</NoWarn>
+    <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
+    <Description>Roslyn analyzer + codefix that migrates source from the legacy Nuke.* namespaces to Fallout.* . Add this package to your _build.csproj while migrating; uninstall once the migration is complete.</Description>
+    <PackageTags>build automation continuous-integration tools orchestration migration analyzer codefix</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>
