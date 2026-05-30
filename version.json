@@ -4,7 +4,7 @@
   "versionHeightOffset": 24,
   "publicReleaseRefSpec": [
     "^refs/heads/main$",
-    "^refs/heads/release/v10$"
+    "^refs/heads/support/v10$"
   ],
   "nuGetPackageVersion": {
     "semVer": 2
