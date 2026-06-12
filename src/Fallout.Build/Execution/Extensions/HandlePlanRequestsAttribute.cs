@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using Fallout.Common;
 using Fallout.Common.Execution;
 using Fallout.Common.IO;
 using Fallout.Common.Utilities;
@@ -37,7 +38,8 @@ internal class HandlePlanRequestsAttribute : BuildExtensionAttributeBase, IOnBui
         var resourceText = ResourceUtility.GetResourceAllText<HandlePlanRequestsAttribute>(HtmlFileName);
         var contents = resourceText
             .Replace("__GRAPH__", GetGraphDefinition())
-            .Replace("__EVENTS__", GetEvents());
+            .Replace("__EVENTS__", GetEvents())
+            .Replace("__DOCS_URL__", Constants.FalloutDocsUrl);
 
         HtmlFile.WriteAllText(contents);
 
